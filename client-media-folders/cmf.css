@@ -1,0 +1,153 @@
+/* Client Media Folders: styles for the media modal folder bar (front end + wp-admin) */
+
+/* ---- Bar: base look (also used in the Media Library grid, where it flows normally) ---- */
+.attachments-browser.cmf-has-bar > .cmf-bar {
+	box-sizing: border-box;
+	background: #fff;
+	border-bottom: 1px solid #dcdcde;
+	padding: 0 16px;
+	font-size: 13px;
+	color: #1d2327;
+}
+
+.cmf-bar .cmf-row {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	height: 42px;
+	overflow-x: auto;
+	white-space: nowrap;
+}
+
+.cmf-bar .cmf-title {
+	font-weight: 600;
+	margin-right: 2px;
+}
+
+/* Folder chips */
+.cmf-bar .cmf-chip {
+	flex: 0 0 auto;
+	border: 1px solid #c3c4c7;
+	background: #f6f7f7;
+	color: #2c3338;
+	border-radius: 999px;
+	padding: 3px 12px;
+	font-size: 13px;
+	line-height: 1.6;
+	cursor: pointer;
+}
+
+.cmf-bar .cmf-chip:hover {
+	background: #f0f0f1;
+	border-color: #8c8f94;
+}
+
+.cmf-bar .cmf-chip.is-active {
+	background: #2271b1;
+	border-color: #2271b1;
+	color: #fff;
+	font-weight: 600;
+}
+
+.cmf-bar .cmf-chip:focus-visible {
+	outline: 2px solid #2271b1;
+	outline-offset: 2px;
+}
+
+.cmf-bar .button {
+	flex: 0 0 auto;
+	margin: 0;
+}
+
+.cmf-bar .cmf-label {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	font-weight: 600;
+}
+
+.cmf-bar select {
+	max-width: 180px;
+	height: 30px;
+}
+
+.cmf-bar .cmf-sep {
+	width: 1px;
+	align-self: stretch;
+	margin: 8px 4px;
+	background: #dcdcde;
+}
+
+.cmf-bar .cmf-msg {
+	color: #1a7f37;
+	font-weight: 600;
+}
+
+.cmf-bar .cmf-msg.is-error {
+	color: #b32d2e;
+}
+
+/* ---- Inside the media modal: bar takes its own 84px strip above the toolbar ---- */
+.media-modal .attachments-browser.cmf-has-bar > .cmf-bar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 300px;
+	height: 84px;
+	z-index: 10;
+}
+
+.media-modal .attachments-browser.cmf-has-bar.hide-sidebar > .cmf-bar {
+	right: 0;
+}
+
+.media-modal .attachments-browser.cmf-has-bar .media-toolbar {
+	top: 84px;
+}
+
+.media-modal .attachments-browser.cmf-has-bar .attachments,
+.media-modal .attachments-browser.cmf-has-bar .uploader-inline {
+	top: 134px !important;
+}
+
+@media (max-width: 900px) {
+	.media-modal .attachments-browser.cmf-has-bar > .cmf-bar {
+		right: 0;
+	}
+}
+
+/* ---- Media Library grid (not in a modal): bar sits above the toolbar in normal flow ---- */
+.media-frame.mode-grid .attachments-browser.cmf-has-bar > .cmf-bar {
+	position: relative;
+	z-index: 2;
+	border: 1px solid #dcdcde;
+	margin: 0 0 8px;
+}
+
+/* ---- "Folder" control in the attachment details panel ---- */
+.cmf-details {
+	margin-top: 12px;
+}
+
+.cmf-details label {
+	display: block;
+	font-weight: 600;
+	color: #1d2327;
+}
+
+.cmf-details .cmf-details-select {
+	display: block;
+	width: 100%;
+	max-width: 100%;
+	margin-top: 4px;
+}
+
+.cmf-details .cmf-details-msg {
+	display: block;
+	margin-top: 4px;
+	font-size: 12px;
+}
+
+.cmf-details .cmf-details-msg.is-error {
+	color: #b32d2e;
+}
