@@ -16,6 +16,7 @@
 	function setFolders(list) {
 		state.folders = list || [];
 		state.trigger('change:folders');
+		
 	}
 
 	function setCurrent(id) {
